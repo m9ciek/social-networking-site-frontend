@@ -1,0 +1,8 @@
+.bold{
+    font-weight: bold;
+}
+.border{
+    border: solid;
+    border-color: rgba(65, 214, 6, 0.795);
+    margin-top: 1em;
+}
