@@ -1,0 +1,25 @@
+.nav{
+    margin:auto, auto;
+    background-color: beige;
+    padding-bottom: 1.25em;
+    padding-top: 1em;
+    text-align: center;
+}
+.nav h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 800;
+}
+a{
+    margin: 6em;
+    padding: 0.2em 1em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    font-weight: bolder;
+    color: grey;
+    border-radius: 25px;
+}
+a:hover{
+    background-color: burlywood;
+    transition: all 0.7s ease;
+    color:black;
+}

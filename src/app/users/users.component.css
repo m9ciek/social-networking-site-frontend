@@ -6,3 +6,7 @@
     border-color: rgba(65, 214, 6, 0.795);
     margin-top: 1em;
 }
+.centered{
+    margin: auto;
+    text-align: center;
+}
