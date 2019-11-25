@@ -1,12 +1,10 @@
- 
-<div class="centered">
-  <p>USERS</p>
-  <br>
+<div class="container">
+
   <div *ngFor="let user of users" class="border row">
-    <div class="col-sm-4"><span class="bold">Id: </span>{{user.id}}</div>
+    <div class="col-sm-4"><span>Id: </span>{{user.id}}</div>
     <div class="col-sm-4"><span>{{user.firstName}} {{user.lastName}}</span> </div>
-    <div class="col-sm-4"><span class="bold"> Email: </span> {{user.email}}</div>
+    <div class="col-sm-4"><span> Email: </span> {{user.email}}</div>
   </div>
-  
+  <p>WORKS</p>
 
 </div>
