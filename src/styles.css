@@ -13,6 +13,9 @@ a{
   font-weight: bolder;
   color: grey;
   border-radius: 0.5rem;
+  margin-right: 0.2rem;
+  border: 1px solid transparent;
+  border-color: cyan;
 
 }
 a:hover{
@@ -27,6 +30,12 @@ a:hover{
   margin-top: 1rem;
   border-radius: 1rem;
 }
+
+.navbar-brand {
+  margin-right: 0.2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
 .jumbotron {
   opacity: 0.8;
   filter: alpha(opacity=50);
@@ -35,3 +44,4 @@ a:hover{
   padding: 2rem 10rem 2rem 10rem;
   border-radius: 1rem;
 }
+
