@@ -23,8 +23,12 @@ export class UserService {
     return this.http.get<User[]>(this.usersUrl);
   }
 
-  addUser(user: User): Observable<User> {
-    return this.http.post<User>(this.usersUrl, user, httpOptions);
+  register(user:User): Observable<User>{
+    return this.http.post<User>("http://localhost:8080/register", user, httpOptions);
   }
+
+  // addUser(user: User): Observable<User> {
+  //   return this.http.post<User>(this.usersUrl, user, httpOptions);
+  // }
 
 }
