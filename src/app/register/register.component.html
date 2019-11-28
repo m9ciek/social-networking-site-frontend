@@ -1,7 +1,5 @@
 <p>register works!</p>
 
-<!--THIS SHOULD WORK PROPERLY-->
-
 <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
   
     <label>
@@ -28,7 +26,8 @@
 
   </form>
 
-  
+  <!--FORM ABOVE SHOULD WORK PROPERLY BELOW IS JUST FOR SHOWING IF REGISTRATION IS SUCCESFULL-->
+
   <div *ngIf="savedUser">
     <p>Succesfully registered User:</p>
     <br>
