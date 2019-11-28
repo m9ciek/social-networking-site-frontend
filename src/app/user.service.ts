@@ -8,11 +8,16 @@ import { User } from './user';
 })
 export class UserService {
 
-  private usersUrl = "http://localhost:8080/users"
+  private usersUrl = "http://localhost:8080/users";
+  private registerUrl = "http://localhost:8080/register";
 
   constructor(private http:HttpClient) { }
 
   getUsers(): Observable<User[]>{
     return this.http.get<User[]>(this.usersUrl);
+  }
+
+  registerUser(registeredUser:User): Observable<any>{
+    return this.http.post(this.registerUrl, registeredUser);
   }
 }

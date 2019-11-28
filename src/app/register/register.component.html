@@ -1,0 +1,37 @@
+<p>register works!</p>
+
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  
+    <label>
+      First Name:
+      <input type="text" formControlName="firstName">
+    </label>
+  
+    <label>
+      Last Name:
+      <input type="text" formControlName="lastName">
+    </label>
+
+    <label>
+        Email:
+        <input type="text" formControlName="email">
+    </label>
+
+    <label>
+        Password:
+        <input type="text" formControlName="password">
+    </label>
+
+    <button type="submit" [disabled]="!userForm.valid">Submit</button>
+
+  </form>
+
+  
+  <div *ngIf="savedUser">
+    <p>Succesfully registered User:</p>
+    <br>
+    <div class="col-sm-4"><span class="bold">Id: </span>{{savedUser.id}}</div>
+    <div class="col-sm-4"><span>First Name: {{savedUser.firstName}}</span></div>
+    <div class="col-sm-4"><span class="bold"> Last Name: {{savedUser.lastName}}</span></div>
+    <div class="col-sm-4"><span class="bold"> Email: </span> {{savedUser.email}}</div>
+  </div>
