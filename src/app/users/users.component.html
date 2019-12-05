@@ -1,12 +1,20 @@
- 
+<div class="container">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Social Networking Site</h1>
+      <p class="lead">An online platform where you can build social networks or social relationship with
+        other people who share similar personal or career interests,
+        activities, backgrounds or real-life connections</p>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>
 <div class="centered">
-  <p>USERS</p>
+  <h1 class="display-5">Registered Users!</h1>
   <br>
   <div *ngFor="let user of users" class="border row">
     <div class="col-sm-4"><span class="bold">Id: </span>{{user.id}}</div>
     <div class="col-sm-4"><span>{{user.firstName}} {{user.lastName}}</span> </div>
     <div class="col-sm-4"><span class="bold"> Email: </span> {{user.email}}</div>
   </div>
-  
-
 </div>

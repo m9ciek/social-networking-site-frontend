@@ -1,31 +1,27 @@
-<p>register works!</p>
+<div class="container">
+<h1 class="display-4">Create new account!</h1>
+<form id="registerForm" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label>First Name:</label>
+      <input type="text" formControlName="firstName" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label>Last Name:</label>
+      <input type="text" formControlName="lastName" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label>Email:</label>
+      <input type="text" formControlName="email" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label>Password:</label>
+      <input type="text" formControlName="password" class="form-control" />
+  </div>
 
-<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-  
-    <label>
-      First Name:
-      <input type="text" formControlName="firstName">
-    </label>
-  
-    <label>
-      Last Name:
-      <input type="text" formControlName="lastName">
-    </label>
-
-    <label>
-        Email:
-        <input type="text" formControlName="email">
-    </label>
-
-    <label>
-        Password:
-        <input type="text" formControlName="password">
-    </label>
-
-    <button type="submit" [disabled]="!userForm.valid">Submit</button>
+    <button class="btn btn-primary" type="submit" [disabled]="!userForm.valid" style="margin-top: 1rem;">Submit</button>
 
   </form>
-
+</div>
   <!--FORM ABOVE SHOULD WORK PROPERLY BELOW IS JUST FOR SHOWING IF REGISTRATION IS SUCCESFULL-->
 
   <div *ngIf="savedUser">

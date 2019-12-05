@@ -1,1 +1,63 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Rajdhani', sans-serif;
+  /*margin: 0 auto;*/
+  text-align: center;
+  background-image: url("https://www.strategies.co.uk/wp-content/uploads/sites/4/2017/07/strategies-job-board-software-seo-background-image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+a{
+  text-decoration: none;
+  font-weight: bolder;
+  color: grey;
+  border-radius: 0.5rem;
+  margin-right: 0.2rem;
+  border: 1px solid transparent;
+  border-color: cyan;
+
+}
+a:hover{
+  background-color: #28a745;
+  transition: all 0.7s ease;
+  color:black;
+}
+
+label {
+  font-size: 1.3rem;
+}
+#registerForm {
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 1rem;
+  background-color:  #f8f9fa;
+  opacity: 0.8;
+  filter: alpha(opacity=50);
+  padding: 1rem 0 1rem 0;
+}
+.navbar {
+  opacity: 0.8;
+  filter: alpha(opacity=50);
+  margin-top: 1rem;
+  border-radius: 1rem;
+}
+
+.navbar-brand {
+  margin-right: 0.2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.jumbotron {
+  opacity: 0.8;
+  filter: alpha(opacity=50);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 2rem 10rem 2rem 10rem;
+  border-radius: 1rem;
+}
+
+.form-group {
+  margin: 0 auto;
+  width: 30%;
+}
