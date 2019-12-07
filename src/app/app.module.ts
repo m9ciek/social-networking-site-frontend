@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
+import { PostsComponent } from './posts/posts.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
-    RegisterComponent
+    RegisterComponent,
+    PostsComponent,
+    MainPageComponent,
   ],
   imports: [
     BrowserModule,
