@@ -10,6 +10,7 @@ export class UserService {
 
   private usersUrl = "http://localhost:8080/users";
   private registerUrl = "http://localhost:8080/register";
+  private loginUrl = "http://localhost:8080/login";
 
   constructor(private http:HttpClient) { }
 
@@ -20,4 +21,5 @@ export class UserService {
   registerUser(registeredUser:User): Observable<any>{
     return this.http.post(this.registerUrl, registeredUser);
   }
+
 }

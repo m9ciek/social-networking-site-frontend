@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
 import { PostsComponent } from './posts/posts.component';
 import { MainPageComponent } from './main-page/main-page.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { MainPageComponent } from './main-page/main-page.component';
     RegisterComponent,
     PostsComponent,
     MainPageComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
