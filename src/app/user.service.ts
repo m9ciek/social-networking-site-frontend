@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable} from 'rxjs';
 import { User } from './user';
 
 @Injectable({
@@ -10,7 +10,6 @@ export class UserService {
 
   private usersUrl = "http://localhost:8080/users";
   private registerUrl = "http://localhost:8080/register";
-  private loginUrl = "http://localhost:8080/login";
 
   constructor(private http:HttpClient) { }
 

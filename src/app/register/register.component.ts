@@ -32,7 +32,9 @@ export class RegisterComponent implements OnInit {
     this.userToSave.email = this.userForm.get('email').value;
     this.userToSave.password = this.userForm.get('password').value;
 
-    this.userService.registerUser(this.userToSave).subscribe(user => this.savedUser = user);
+    this.userService.registerUser(this.userToSave).subscribe(
+      user => this.savedUser = user, 
+  );
   }
 
 }
