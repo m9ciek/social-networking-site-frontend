@@ -12,4 +12,8 @@ export class AuthService {
   login(data):Observable<any>{
     return this.http.post('http://localhost:8080/login',data);
   }
+
+  logout() {
+    localStorage.removeItem("jwt");
+  }
 }
