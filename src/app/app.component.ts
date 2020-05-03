@@ -11,14 +11,28 @@ export class AppComponent {
 
   constructor(private router: Router) { }
 
+  loggedIn:boolean;
+
   @HostListener("window:onbeforeunload",["$event"])
     clearLocalStorage(event){
       localStorage.clear();
     }
 
+  ngOnInit() {
+    this.checkIfLoggedIn();
+  }
+
   logout(){
     localStorage.clear();
+    this.loggedIn = false;
     this.router.navigate(['']);
     alert('Successfully logged out');
   }
+
+  checkIfLoggedIn(){
+    if(localStorage.getItem('jwt')!=null){
+      this.loggedIn = true;
+    }
+  }
+  
 }

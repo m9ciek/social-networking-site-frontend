@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { User } from '../user';
 import { Router } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
@@ -18,10 +19,10 @@ export class RegisterComponent implements OnInit {
   }
 
   userForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    email: new FormControl(''),
-    password: new FormControl('')
+    firstName: new FormControl('', [Validators.required]),
+    lastName: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required])
   });
   userToSave = new User();
 
@@ -34,10 +35,15 @@ export class RegisterComponent implements OnInit {
     this.userToSave.password = this.userForm.get('password').value;
 
     this.userService.registerUser(this.userToSave).subscribe(
-      user => this.savedUser = user, 
+      user => this.savedUser = user,
+      error => {
+        console.error(error);
+      },
+      () => {
+        this.router.navigate(['']);
+        alert('Registered user with email: ' + this.userToSave.email);
+      }
   );
-    this.router.navigate(['']);
-    alert('Registered user with email: ' + this.userToSave.email);
   }
 
 }
