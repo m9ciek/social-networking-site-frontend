@@ -1,6 +1,10 @@
 <h1>All Posts</h1>
 <br>
-<div *ngFor="let post of posts">
+<div *ngFor="let post of posts" class="post-background">
+    <div *ngIf="post.imageURL!=null"><img src='assets/moja-piekna-natura.jpg' height="200"></div>
     <div><span>{{post.body}}</span></div>
+    <hr>
     <div>Submitted on: <span>{{post.date}}</span></div>
+    <div>by: {{post.user.firstName}}</div>
+    <div *ngIf="post.imageURL!=null"><span>Img URL: {{post.imageURL}}</span></div>
 </div>

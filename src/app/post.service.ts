@@ -8,12 +8,12 @@ import { Post } from './post';
 })
 export class PostService {
 
-  private usersUrl = "http://localhost:8080/posts";
+  private postsUrl = "http://localhost:8080/posts";
 
   constructor(private http:HttpClient) { }
 
   getPosts(): Observable<Post[]>{
-    return this.http.get<Post[]>(this.usersUrl);
+    return this.http.get<Post[]>(this.postsUrl);
   }
 
 }
