@@ -1,10 +1,11 @@
 <div class="container">
     <h1 class="display-5">Add new post!</h1>
     <form id="registerForm" [formGroup]="postForm" (ngSubmit)="addNewPost()" #addPostForm="ngForm">
-      <!-- <div class="form-group"> -->
           <textarea formControlName="body" class="form-control"></textarea>
           <p *ngIf="postForm.get('body').hasError('required') && addPostForm.submitted">Post body is required</p>
-      <!-- </div> -->
+          <div class="upload-file">
+            <input type="file" name="image" (change)="onFileSelect($event)" />
+          </div>
     <button class="btn btn-primary" type="submit" style="margin-top: 1rem;">Add</button>
     
       </form>

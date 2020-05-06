@@ -13,3 +13,7 @@ textarea {
     margin: auto;
     resize: none;
   }
+
+.upload-file{
+    margin-top: 0.75em;
+}

@@ -17,13 +17,18 @@ export class PostService {
     return this.http.get<Post[]>(this.postsUrl);
   }
 
-  addNewPost(postToAdd:Post): Observable<any>{
+  addNewPost(postToAdd:Post, imageFile:File): Observable<any>{
 
     const httpOptions = {
       params: new HttpParams().set('body', postToAdd.body)
     };
 
-    return this.http.post(this.addPostUrl, postToAdd, httpOptions);
+    const fd = new FormData();
+    if(imageFile){
+      fd.append('image', imageFile, imageFile.name);
+    }
+
+    return this.http.post(this.addPostUrl, fd, httpOptions);
   }
 
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from '../post';
 import { PostService } from '../post.service';
-import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
+import { DomSanitizer} from '@angular/platform-browser';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -16,10 +16,11 @@ export class PostsComponent implements OnInit {
 
   constructor(private postService:PostService, private sanitizer:DomSanitizer, private router:Router) { }
 
-
   postForm = new FormGroup({
     body: new FormControl('', [Validators.required]),
+    image: new FormControl('',)
   });
+  
   postToSave = new Post();
 
   ngOnInit() {
@@ -36,9 +37,16 @@ export class PostsComponent implements OnInit {
   addNewPost(){
     if(this.postForm.valid){
       this.postToSave.body = this.postForm.get('body').value;
-      this.postService.addNewPost(this.postToSave).subscribe(res =>
+      this.postService.addNewPost(this.postToSave, this.postForm.get('image').value).subscribe(res =>
         console.log('Post Body: '+ res.body));
+      window.location.reload();
     }
-    window.location.reload();
+    
+  }
+
+  onFileSelect(event) {
+    this.postForm.patchValue({
+      image: event.target.files[0]
+    });
   }
 }
