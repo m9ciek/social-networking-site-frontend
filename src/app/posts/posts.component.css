@@ -6,3 +6,10 @@
     font-size: large;
     font-weight: bold;
 }
+
+textarea {
+    width: 90%;
+    height: 10em;
+    margin: auto;
+    resize: none;
+  }

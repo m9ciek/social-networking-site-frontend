@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Post } from './post';
 
@@ -9,11 +9,21 @@ import { Post } from './post';
 export class PostService {
 
   private postsUrl = "http://localhost:8080/posts";
+  private addPostUrl = "http://localhost:8080/main/post";
 
   constructor(private http:HttpClient) { }
 
   getPosts(): Observable<Post[]>{
     return this.http.get<Post[]>(this.postsUrl);
+  }
+
+  addNewPost(postToAdd:Post): Observable<any>{
+
+    const httpOptions = {
+      params: new HttpParams().set('body', postToAdd.body)
+    };
+
+    return this.http.post(this.addPostUrl, postToAdd, httpOptions);
   }
 
 }

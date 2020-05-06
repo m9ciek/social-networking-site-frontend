@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Post } from '../post';
 import { PostService } from '../post.service';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-posts',
@@ -12,7 +14,13 @@ export class PostsComponent implements OnInit {
 
   posts: Post[];
 
-  constructor(private postService:PostService, private sanitizer:DomSanitizer) { }
+  constructor(private postService:PostService, private sanitizer:DomSanitizer, private router:Router) { }
+
+
+  postForm = new FormGroup({
+    body: new FormControl('', [Validators.required]),
+  });
+  postToSave = new Post();
 
   ngOnInit() {
     this.getPosts();
@@ -24,4 +32,13 @@ export class PostsComponent implements OnInit {
   }
   //need to include proper url sanitization in order to fetch images from file system
   //now app is using default image from folder assets/imgUrl
+
+  addNewPost(){
+    if(this.postForm.valid){
+      this.postToSave.body = this.postForm.get('body').value;
+      this.postService.addNewPost(this.postToSave).subscribe(res =>
+        console.log('Post Body: '+ res.body));
+    }
+    window.location.reload();
+  }
 }

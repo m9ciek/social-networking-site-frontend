@@ -1,10 +1,22 @@
-<h1>All Posts</h1>
-<br>
+<div class="container">
+    <h1 class="display-5">Add new post!</h1>
+    <form id="registerForm" [formGroup]="postForm" (ngSubmit)="addNewPost()" #addPostForm="ngForm">
+      <!-- <div class="form-group"> -->
+          <textarea formControlName="body" class="form-control"></textarea>
+          <p *ngIf="postForm.get('body').hasError('required') && addPostForm.submitted">Post body is required</p>
+      <!-- </div> -->
+    <button class="btn btn-primary" type="submit" style="margin-top: 1rem;">Add</button>
+    
+      </form>
+    
+    </div>
+    <br>
+<h1>Posts</h1>
 <div *ngFor="let post of posts" class="post-background">
     <div *ngIf="post.imageURL!=null"><img src='assets/moja-piekna-natura.jpg' height="200"></div>
     <div><span>{{post.body}}</span></div>
     <hr>
     <div>Submitted on: <span>{{post.date}}</span></div>
-    <div>by: {{post.user.firstName}}</div>
+    <div>by: {{post.user.firstName}} {{post.user.lastName}}</div>
     <div *ngIf="post.imageURL!=null"><span>Img URL: {{post.imageURL}}</span></div>
 </div>
