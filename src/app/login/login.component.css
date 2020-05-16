@@ -1,0 +1,15 @@
+.log-form{
+    color:blue;
+    box-decoration-break: slice;
+    text-emphasis: initial;
+    padding: 10px;
+    margin: 20px;
+    border-color: blue;
+}
+
+.utill{
+    color: khaki;
+    text-align: center;
+    text-size-adjust: unset;
+    flex-basis: 2px;
+}
