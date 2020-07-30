@@ -9,7 +9,6 @@ import { Post } from './post';
 export class PostService {
 
   private postsUrl = "http://localhost:8080/posts";
-  private addPostUrl = "http://localhost:8080/main/post";
 
   constructor(private http:HttpClient) { }
 
@@ -28,7 +27,7 @@ export class PostService {
       fd.append('image', imageFile, imageFile.name);
     }
 
-    return this.http.post(this.addPostUrl, fd, httpOptions);
+    return this.http.post(this.postsUrl, fd, httpOptions);
   }
 
 }

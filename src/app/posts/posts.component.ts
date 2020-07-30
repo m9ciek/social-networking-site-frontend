@@ -18,7 +18,7 @@ export class PostsComponent implements OnInit {
 
   postForm = new FormGroup({
     body: new FormControl('', [Validators.required]),
-    image: new FormControl('',)
+    image: new FormControl('')
   });
   
   postToSave = new Post();
