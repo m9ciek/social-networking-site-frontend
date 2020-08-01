@@ -4,6 +4,7 @@ import { PostService } from '../post.service';
 import { DomSanitizer} from '@angular/platform-browser';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { User } from '../user';
 
 @Component({
   selector: 'app-posts',

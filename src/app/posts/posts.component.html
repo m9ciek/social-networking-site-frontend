@@ -17,7 +17,7 @@
     <div *ngIf="post.imageURL!=null"><img src='assets/moja-piekna-natura.jpg'></div>
     <div><span>{{post.body}}</span></div>
     <hr>
-    <div>Submitted on: <span>{{post.date}}</span></div>
-    <div>by: {{post.user.firstName}} {{post.user.lastName}}</div>
+    <div>Submitted on: <span>{{post.created}}</span></div>
+    <div>by User with Id: {{post.userId}}</div>
     <div *ngIf="post.imageURL!=null"><span>Img URL: {{post.imageURL}}</span></div>
 </div>
