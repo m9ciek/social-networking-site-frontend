@@ -1,14 +1,14 @@
 .log-form{
-    color:blue;
+    color:rgb(130, 186, 238);
     box-decoration-break: slice;
     text-emphasis: initial;
     padding: 10px;
     margin: 20px;
-    border-color: blue;
+    border-color: rgb(14, 105, 223);
 }
 
 .utill{
-    color: khaki;
+    color: rgba(196, 193, 21, 0.562);
     text-align: center;
     text-size-adjust: unset;
     flex-basis: 2px;
